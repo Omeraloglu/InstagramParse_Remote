@@ -8,6 +8,7 @@
 // New one
 
 import UIKit
+import Parse
 
 class signInVC: UIViewController {
 
@@ -16,9 +17,20 @@ class signInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let parseObject = PFObject(className: "Fruits")
+        parseObject["name"] = "apple"
+        parseObject["calories"] = 100
+        parseObject.saveInBackground { success, error in
+            if error != nil{
+                print(error?.localizedDescription as Any)
+            }else{
+                print("saved")
+                }
+        
+        
+        }
     }
-
     @IBAction func signInClicked(_ sender: Any) {
         performSegue(withIdentifier: "toTabBar", sender: nil)
     }
