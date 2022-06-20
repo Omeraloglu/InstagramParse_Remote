@@ -1,15 +1,13 @@
 //
-//  ViewController.swift
+//  SecondViewController.swift
 //  InstagramParse
 //
 //  Created by Ömer ALOĞLU on 20.06.2022.
 //
 
-// New one
-
 import UIKit
 
-class ViewController: UIViewController {
+class uploadVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,4 +16,3 @@ class ViewController: UIViewController {
 
 
 }
-
