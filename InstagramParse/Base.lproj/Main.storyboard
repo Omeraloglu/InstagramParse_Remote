@@ -76,20 +76,73 @@
             </objects>
             <point key="canvasLocation" x="-2448" y="-113"/>
         </scene>
-        <!--Upload-->
+        <!--UploadVC-->
         <scene sceneID="JpC-hA-xFY">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="3NJ-Uc-0ob" customClass="uploadVC" customModule="InstagramParse" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Upload" id="uLJ-kJ-zyh"/>
+                    <view key="view" contentMode="scaleToFill" id="kb3-5s-4eN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BfM-Eh-wZh">
+                                <rect key="frame" x="63.5" y="86" width="287" height="240"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="VOX-Mq-qlO"/>
+                                    <constraint firstAttribute="height" constant="240" id="pCB-hP-gv8"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tbe-Be-Z7v">
+                                <rect key="frame" x="40" y="356" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRF-Vz-x73">
+                                <rect key="frame" x="297" y="422" width="68" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="jk6-xO-zfu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Post"/>
+                                <connections>
+                                    <action selector="postClicked:" destination="3NJ-Uc-0ob" eventType="touchUpInside" id="ihl-0Q-qOH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rpi-hx-8rS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rpi-hx-8rS" firstAttribute="trailing" secondItem="Tbe-Be-Z7v" secondAttribute="trailing" constant="40" id="7Wy-cE-BPW"/>
+                            <constraint firstItem="BfM-Eh-wZh" firstAttribute="centerX" secondItem="kb3-5s-4eN" secondAttribute="centerX" id="8vC-JJ-HIf"/>
+                            <constraint firstItem="Tbe-Be-Z7v" firstAttribute="top" secondItem="BfM-Eh-wZh" secondAttribute="bottom" constant="30" id="D3V-dP-Sxu"/>
+                            <constraint firstItem="BfM-Eh-wZh" firstAttribute="top" secondItem="rpi-hx-8rS" secondAttribute="top" constant="30" id="PCO-Ws-Pxz"/>
+                            <constraint firstItem="rpi-hx-8rS" firstAttribute="trailing" secondItem="HRF-Vz-x73" secondAttribute="trailing" constant="49" id="RSt-fI-YRC"/>
+                            <constraint firstItem="Tbe-Be-Z7v" firstAttribute="leading" secondItem="rpi-hx-8rS" secondAttribute="leading" constant="40" id="Xi0-T5-KqU"/>
+                            <constraint firstItem="HRF-Vz-x73" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rpi-hx-8rS" secondAttribute="leading" symbolic="YES" id="vR4-4g-MLZ"/>
+                            <constraint firstItem="HRF-Vz-x73" firstAttribute="top" secondItem="Tbe-Be-Z7v" secondAttribute="bottom" constant="32" id="znd-ue-kQF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TAg-ky-MSu"/>
+                    <connections>
+                        <outlet property="commentText" destination="Tbe-Be-Z7v" id="q0z-7b-0Qh"/>
+                        <outlet property="postButton" destination="HRF-Vz-x73" id="GEn-kB-U4W"/>
+                        <outlet property="postImage" destination="BfM-Eh-wZh" id="i4e-dF-EYI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9E-Vg-4VH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-454" y="189"/>
+            <point key="canvasLocation" x="455.07246376811599" y="188.83928571428569"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="ksg-6A-acn">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="bDR-Cu-aCF" customClass="feedVC" customModule="InstagramParse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r8T-hp-sgo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <viewLayoutGuide key="safeArea" id="KF5-tf-dEd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                     <navigationItem key="navigationItem" id="uNf-7D-2yX">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="vV4-rG-kc5">
                             <connections>
@@ -114,7 +167,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="yhv-OS-gfv" kind="relationship" relationship="viewControllers" id="XpR-FD-JmT"/>
-                        <segue destination="3NJ-Uc-0ob" kind="relationship" relationship="viewControllers" id="3ad-2z-CsF"/>
+                        <segue destination="zbs-Lk-zQd" kind="relationship" relationship="viewControllers" id="3ad-2z-CsF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USq-Uw-dGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -140,8 +193,30 @@
             </objects>
             <point key="canvasLocation" x="-455.07246376811599" y="-543.08035714285711"/>
         </scene>
+        <!--Upload-->
+        <scene sceneID="E5i-s0-5bs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zbs-Lk-zQd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Upload" id="uLJ-kJ-zyh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DJ3-ue-eKj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3NJ-Uc-0ob" kind="relationship" relationship="rootViewController" id="rqs-C3-5Wj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NX6-2g-7wJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-455.07246376811599" y="188.83928571428569"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
