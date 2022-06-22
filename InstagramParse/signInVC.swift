@@ -55,7 +55,18 @@ class signInVC: UIViewController {
                     alert.addAction(okButton)
                     self.present(alert, animated: true, completion: nil)
                 }else {
-                    self.performSegue(withIdentifier: "toTabBar", sender: nil)
+                    // remember user function
+                    UserDefaults.standard.set(self.usernameText.text!, forKey: "username")
+                    UserDefaults.standard.synchronize()
+
+                    
+                    if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                        scene.rememberUser()
+                    }
+                    
+//                    let delegate : SceneDelegate = UIApplication.shared.delegate as! SceneDelegate
+//                    delegate.rememberUser()
+                  //  self.performSegue(withIdentifier: "toTabBar", sender: nil)
                 }
             }
             
@@ -83,7 +94,19 @@ class signInVC: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                     
                 }else{
-                    self.performSegue(withIdentifier: "toTabBar", sender: nil)
+                    
+                    // remember user function
+                    UserDefaults.standard.set(self.usernameText.text!, forKey: "username")
+                    UserDefaults.standard.synchronize()
+
+                  //  let delegate : SceneDelegate = UIApplication.shared.delegate as! SceneDelegate
+                    if let scene = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                        scene.rememberUser()
+                    }
+                  
+               //     delegate.rememberUser()
+                    
+                  //  self.performSegue(withIdentifier: "toTabBar", sender: nil)
                 }
             }
         
